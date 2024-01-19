@@ -57,6 +57,24 @@ void paginaInicial() {
         "<head>"
         "<meta http-equiv=\"refresh\" content=\"1\">"  // Atualizar a pagina a cada 1s
         "<title>SalaMaker - ESP8266</title>"
+        "<script>"
+        "function atualizarValorAnalogico(valor) {"
+        "document.getElementById("valor").innerText = valor;"
+        " }"
+
+        "function lerValorAnalogico() {"
+
+            "var valor_sensor = String(analogRead(A0));"
+
+
+            "atualizarValorAnalogico(valor_sensor);"
+            "}"
+
+
+        "setInterval(lerValorAnalogico, 1000);"
+
+        
+        "</script>"
         "</head>"
         "<body><font face=\"verdana\"><"
         "<h2>Controlar um LED pela GPIO 14 do ESP</h2>";
@@ -80,9 +98,9 @@ void paginaInicial() {
     }
 
     htmlMessage +=
-        "<h2>Dados do LDR:</h2>";
-
-    htmlMessage += valor_sensor;
+        "<h2>Dados do LDR:</h2>"
+        "<div id="valor">"
+        "</div>";
 
     htmlMessage +=
         "<button>Me clica</button>"
