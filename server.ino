@@ -58,7 +58,7 @@ void paginaInicial() {
         "<meta http-equiv=\"refresh\" content=\"1\">"  // Atualizar a pagina a cada 1s
         "<title>SalaMaker - ESP8266</title>"
         "</head>"
-        "<body><font face=\"verdana\">"
+        "<body><font face=\"verdana\"><"
         "<h2>Controlar um LED pela GPIO 14 do ESP</h2>";
 
     if (estado_led == 0) {
@@ -85,6 +85,8 @@ void paginaInicial() {
     htmlMessage += valor_sensor;
 
     htmlMessage +=
+        "<button>Me clica</button>"
+        "</body>"
         "<hr>"
         "</html>";
 
