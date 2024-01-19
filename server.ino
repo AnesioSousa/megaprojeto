@@ -49,13 +49,12 @@ void loop() {
 void paginaInicial() {
     String valor_sensor = "";
     valor_sensor = String(analogRead(A0));
-
+git branch -f main 2fb5672
     //============================
-    String htmlMessage =
+String htmlMessage =
         "<!DOCTYPE html>"
         "<html>"
         "<head>"
-        "<meta http-equiv=\"refresh\" content=\"1\">"  // Atualizar a pagina a cada 1s
         "<title>SalaMaker - ESP8266</title>"
         "<script>"
         "function atualizarValorAnalogico(valor) {"
@@ -79,6 +78,7 @@ void paginaInicial() {
         "<body><font face=\"verdana\"><"
         "<h2>Controlar um LED pela GPIO 14 do ESP</h2>";
 
+
     if (estado_led == 0) {
         htmlMessage +=
             "<a href=\"/?ledstatus=0\" > Acende LED</a>";
@@ -98,13 +98,11 @@ void paginaInicial() {
     }
 
     htmlMessage +=
-        "<h2>Dados do LDR:</h2>"
-        "<div id="valor">"
-        "</div>";
+        "<h2>Dados do LDR:</h2>";
+
+    htmlMessage += valor_sensor;
 
     htmlMessage +=
-        "<button>Me clica</button>"
-        "</body>"
         "<hr>"
         "</html>";
 
